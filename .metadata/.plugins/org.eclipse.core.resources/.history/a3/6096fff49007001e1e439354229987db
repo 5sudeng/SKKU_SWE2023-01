@@ -1,0 +1,15 @@
+import javax.swing.*;
+import java.awt.*;
+public class LinePanel extends JPanel {
+	
+	public LinePanel() {
+		setPreferredSize(new Dimension(800,600));
+		setBackground(Color.white);
+	}
+	
+	public void paintComponent(Graphics page) {
+		super.paintComponent(page);
+		
+	}// paintComponent()
+	
+} // LinePanel class

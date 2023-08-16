@@ -1,0 +1,88 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.ArrayList;
+
+public class DrawController extends JPanel { 
+	
+	private SimplePainterModel nowData;
+	private ArrayList<SimplePainterModel> savedList;
+	private DrawListener drawL;
+	private SimplePainterView view;
+	
+	public DrawController(SimplePainterView v) {
+		view = v;
+		
+		setBackground(Color.white);
+		
+		drawL = new DrawListener();
+		
+		addMouseListener(drawL);
+		addMouseMotionListener(drawL);
+		
+		nowData = new SimplePainterModel();
+		savedList = new ArrayList<SimplePainterModel>();
+		
+		nowData.nDrawMode = Constants.NONE;
+	} // DrawController()
+	
+	public void setDrawMode(int mode) {
+		nowData.nDrawMode = mode;
+	}
+	
+	public void setSelectedColor(Color color) {
+		nowData.selectedColor = color;
+	}
+	
+	public void paintComponent(Graphics page) {
+		super.paintComponent(page);
+	} // paintComponent()
+	
+	private class DrawListener implements MouseListener, MouseMotionListener {
+
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			if (nowData.nDrawMode == Constants.DOT) {
+				nowData.ptOne = e.getPoint();
+			} // if
+		} // mouseClicked()
+		
+		@Override
+		public void mouseDragged(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseMoved(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
+	
+} // DrawController class

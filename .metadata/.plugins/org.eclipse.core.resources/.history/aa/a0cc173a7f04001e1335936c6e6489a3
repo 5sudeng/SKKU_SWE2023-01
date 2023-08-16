@@ -1,0 +1,11 @@
+import java.awt.*;
+import javax.swing.*;
+
+public class DrawPanel extends JPanel {
+	
+	public DrawPanel() {
+		setPreferredSize(new Dimension(800,600));
+		setBackground(Color.white);
+		
+	} // DrawPanel()
+} // DrawPanel class

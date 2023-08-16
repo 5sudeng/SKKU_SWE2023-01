@@ -1,0 +1,17 @@
+import java.awt.Point;
+
+public class LineData {
+	
+	public Point ptOne, ptTwo;
+	
+	public LineData() {
+		ptOne = new Point();
+		ptTwo = new Point();
+	} // constructor
+	
+	public LineData(Point pt1, Point pt2) {
+		ptOne = pt1;
+		ptTwo = pt2;
+	}
+	
+} // LineData class

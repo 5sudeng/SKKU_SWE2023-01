@@ -1,0 +1,31 @@
+import java.awt.Point;
+import java.awt.Color;
+
+public class RectData {
+	
+	public Point ptOne, ptTwo;
+	public Color selectedColor;
+	public int width;
+	
+	public RectData() {
+		ptOne = new Point();
+		ptTwo = new Point();
+		selectedColor = Color.black;
+		width = 1;
+	} // constructor
+	
+	public RectData(Point pt1, Point pt2, Color color, int w) {
+		ptOne = pt1;
+		ptTwo = pt2;
+		selectedColor = color;
+		width = w;
+	}
+	
+	public RectData(RectData data) {
+		ptOne = data.ptOne;
+		ptTwo = data.ptTwo;
+		selectedColor = data.selectedColor;
+		width = data.width;
+	}
+	
+} // RectData class

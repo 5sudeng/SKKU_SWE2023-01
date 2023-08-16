@@ -1,0 +1,64 @@
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class DrawPanel extends JPanel {
+	
+	private Point _ptDot;
+	private int _dotSize; 
+	
+	public DrawPanel() {
+		setPreferredSize(new Dimension(800,600));
+		setBackground(Color.white);
+		addMouseListener(new DrawListener());
+		
+		_dotSize = 10;
+		_ptDot = new Point();
+		
+	} // DrawPanel()
+	
+	public void setSize(int size) {_dotSize = size;}
+	public int geDottSize() {return _dotSize;}
+	
+	public void paintComponent(Graphics page) {
+		super.paintComponent(page);
+		
+		page.fillOval(_ptDot.x, _ptDot.y, _dotSize, _dotSize);
+	}// paintComponent()
+	
+	//1. listener class
+	private class DrawListener implements MouseListener {
+
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			_ptDot = e.getPoint();  //_ptDot.x = e.getX(); 이벤트 발생 좌표 
+			repaint();
+		}
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
+	
+} // DrawPanel class

@@ -1,0 +1,21 @@
+import javax.swing.JPanel;
+import java.awt.*;
+import java.util.ArrayList;
+
+public class DrawController extends JPanel { 
+	
+	private SimplePainterModel nowData;
+	private ArrayList<SimplePainterModel> savedList;
+	
+	public DrawController() {
+		setBackground(Color.white);
+		
+		nowData = new SimplePainterModel();
+		savedList = new ArrayList<SimplePainterModel>();
+	} // DrawController()
+	
+	public void paintComponent(Graphics page) {
+		super.paintComponent(page);
+	} // paintComponent()
+	
+} // DrawController class

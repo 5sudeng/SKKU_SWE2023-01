@@ -1,0 +1,7 @@
+
+public class DrawData {
+
+	public Point ptDot;
+	public int dotSize;
+	
+} // DrawData class

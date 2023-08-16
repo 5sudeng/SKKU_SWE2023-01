@@ -1,0 +1,62 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class LinePanel extends JPanel {
+	
+	private Point ptOne, ptTwo;
+	private LineListener lineL;
+	
+	public LinePanel() {
+		setPreferredSize(new Dimension(800,600));
+		setBackground(Color.white);
+		
+		lineL = new LineListener();
+		addMouseListener(lineL);
+		addMouseMotionListener(lineL);
+		
+		ptOne = new Point();
+		ptTwo = new Point();
+	}
+	
+	public void paintComponent(Graphics page) {
+		//super.paintComponent(page);
+		
+		page.drawLine(ptOne.x, ptOne.y, ptTwo.x, ptTwo.y);
+		
+	}// paintComponent()
+	
+	private class LineListener implements MouseListener, MouseMotionListener {
+		
+		@Override
+		public void mousePressed(MouseEvent e) {
+			ptOne = e.getPoint();
+			
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			ptTwo = e.getPoint();
+			repaint();
+		}	
+		
+		@Override
+		public void mouseDragged(MouseEvent e) {
+			ptTwo = e.getPoint();
+			repaint();
+			
+		}
+
+		@Override
+		public void mouseClicked(MouseEvent e) {}
+		@Override
+		public void mouseEntered(MouseEvent e) {}
+		@Override
+		public void mouseExited(MouseEvent e) {}
+		
+		@Override
+		public void mouseMoved(MouseEvent e) {}
+		
+	} // LineListener class
+	
+} // LinePanel class

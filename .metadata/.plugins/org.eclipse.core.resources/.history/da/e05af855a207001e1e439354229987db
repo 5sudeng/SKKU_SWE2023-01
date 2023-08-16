@@ -1,0 +1,6 @@
+
+public class Constants {
+	static final public String MENU[] = {
+			"DOT", "LINE", "RECT", "OVAL", "", ""
+	}; // final -> 상수 literal
+}

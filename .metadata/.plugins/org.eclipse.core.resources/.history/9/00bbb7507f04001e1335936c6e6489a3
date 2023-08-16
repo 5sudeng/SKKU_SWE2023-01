@@ -1,0 +1,23 @@
+import java.awt.*;
+import javax.swing.*;
+
+public class DrawPanel extends JPanel {
+	
+	private Point _ptDot;
+	private int _size; 
+	
+	public DrawPanel() {
+		setPreferredSize(new Dimension(800,600));
+		setBackground(Color.white);
+		
+		_size = 10;
+		_ptDot = new Point();
+		
+	} // DrawPanel()
+	
+	public void paintComponent(Graphics page) {
+		super.paintComponent(page);
+		
+	}// paintComponent()
+	
+} // DrawPanel class

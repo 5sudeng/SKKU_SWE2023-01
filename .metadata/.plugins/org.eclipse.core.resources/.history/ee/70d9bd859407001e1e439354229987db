@@ -1,0 +1,64 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.ArrayList;
+
+public class LinePanel extends JPanel {
+	
+	private ArrayList<LineData>  savedList; // 저장된 데이터 
+	private LineData			 nowData; // 현재거 그림 
+	private LineListener 		 lineL;
+	
+	public LinePanel() {
+		setPreferredSize(new Dimension(800,600));
+		setBackground(Color.white);
+		
+		lineL = new LineListener();
+		addMouseListener(lineL);
+		addMouseMotionListener(lineL);
+		
+		nowData = new LineData();
+		savedList = new ArrayList<LineData>();
+	}
+	
+	public void paintComponent(Graphics page) {
+		super.paintComponent(page);
+		
+		page.drawLine(ptOne.x, ptOne.y, ptTwo.x, ptTwo.y);
+		
+	}// paintComponent()
+	
+	private class LineListener implements MouseListener, MouseMotionListener {
+		
+		@Override
+		public void mousePressed(MouseEvent e) {
+			nowData.ptOne = e.getPoint();
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			nowData.ptTwo = e.getPoint();
+			savedList.add(new LineData(nowData));
+			repaint();
+		}	
+		
+		@Override
+		public void mouseDragged(MouseEvent e) {
+			nowData.ptTwo = e.getPoint();
+			repaint();
+			
+		}
+
+		@Override
+		public void mouseClicked(MouseEvent e) {}
+		@Override
+		public void mouseEntered(MouseEvent e) {}
+		@Override
+		public void mouseExited(MouseEvent e) {}
+		
+		@Override
+		public void mouseMoved(MouseEvent e) {}
+		
+	} // LineListener class
+	
+} // LinePanel class
